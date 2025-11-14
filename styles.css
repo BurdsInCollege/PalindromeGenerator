@@ -4,28 +4,29 @@ body {
     margin-top: 50px;
     font-size: 20px;
     letter-spacing: .5px;
-    background-color: #b5bef0c7;
+    background-color: #D3C5E5;
     border-radius: 10px;
     padding: 20px;
 }
 
 .container {
-    background-color: #5656ffff;
+    background-color: #b699dbff;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: inline-block;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .75), 0 6px 6px rgba(0, 0, 0, 0.50);
     shadow-color: #000000;
-    shadow-offset: 0px 4px;
+    shadow-offset: 5px 4px;
     shadow-opacity: 1.0;
     shadow-radius: 8px;
     corner-radius: 10px;
+    
 }
 
 
-button {
-    background-color: #7a6cc7ff; /* Green */
-    color: #f0e1e1ff;
+#generateButton {
+    background-color: #735DA5;
+    color: #ffffffff;
     padding: 10px 16px;
     text-align: center;
     text-decoration: none;
@@ -35,7 +36,15 @@ button {
     cursor: pointer;
     border-radius: 8px;
     border-width: 1px;
-    border-color: #7a6cc7ff;
+    border-color: #735DA5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .75), 0 2px 1px rgba(0, 0, 0, 0.50);
+    transition: all 0.3s ease;
+}
+
+#generateButton:hover {
+    background-color: #5A4390;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, .85), 0 3px 2px rgba(0, 0, 0, 0.60);
+    transform: scale(1.05);
 }
 
 @keyframes lights {
@@ -86,11 +95,67 @@ button {
   
 }
 
+@keyframes type {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
 h1 {
-  font-family: 'Brush Script MT', sans-serif;
+  font-family: 'Brush Script MT', script;
+  background: -webkit-linear-gradient(25deg, #197971ff, #103124ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: #ffffffff;
-    margin: auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #ffffffff;
   font-size: auto;
   font-weight: bold;
-  animation: lights 5s 750ms linear infinite;
+  justify-content: center;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  animation: type .5s steps(90) .5s 1 normal both, cursor 1s step-end infinite;
+}
+
+#word-display { /*a lot of this does not really change much from defaults but whatever*/
+    color: #f3f0faff;
+    background-color: #5e3fa09a;
+    background-size: 300px;
+    background-left: center;
+    background-top: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-left: 75px;
+    margin-right: 75px;
+    padding: 1px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: #7e768fff;
+    border-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    white-space: auto;
 }
